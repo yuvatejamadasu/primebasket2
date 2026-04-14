@@ -8,7 +8,7 @@
 
 import axios from 'axios';
 
-const JSON_SERVER_BASE = 'http://localhost:4000';
+const JSON_SERVER_BASE = import.meta.env.VITE_API_URL || 'https://prime-basket-mx8g.vercel.app/api';
 const LOCAL_PROFILE_URL = '/data/profile.json';
 
 // ─── Helpers ────────────────────────────────────────────────────────────────

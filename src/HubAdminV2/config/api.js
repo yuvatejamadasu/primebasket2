@@ -4,15 +4,16 @@
  * ORDERS, SELLERS, BRANDS, STATISTICS → served from /public/data/ (static JSON).
  *   db.json has empty arrays for these, so we fetch directly from /data/*.json.
  *
- * PRODUCTS  → json-server (localhost:4000)
- * REVIEWS   → json-server (localhost:4000)
- * PROFILE   → json-server (localhost:4000) — persisted via PUT on edit
+ * PRODUCTS  → Backend API (VITE_API_URL)
+ * REVIEWS   → Backend API (VITE_API_URL)
+ * PROFILE   → Backend API (VITE_API_URL) — persisted via PUT on edit
  */
 
-// json-server endpoints (data lives in db.json)
-const PRODUCTS_BASE  = "http://localhost:4000/products";
-const REVIEWS_BASE   = "http://localhost:4000/reviews";
-const PROFILE_BASE   = "http://localhost:4000/profile";
+// Backend API base URL from environment
+const BASE_URL = import.meta.env.VITE_API_URL || 'https://prime-basket-mx8g.vercel.app/api';
+const PRODUCTS_BASE  = `${BASE_URL}/products`;
+const REVIEWS_BASE   = `${BASE_URL}/reviews`;
+const PROFILE_BASE   = `${BASE_URL}/profile`;
 
 export const API = {
   // ── Static JSON in /public/data/ ──────────────────────────────────────

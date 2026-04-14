@@ -9,13 +9,13 @@
  * PROFILE   → json-server (localhost:4000) — persisted via PUT on edit
  */
 
-// Change this to your real backend server URL when ready
-const BACKEND_URL = ""; 
+// Backend API base URL from environment variable
+const BACKEND_URL = import.meta.env.VITE_API_URL || 'https://prime-basket-mx8g.vercel.app/api';
 
-// json-server endpoints (data lives in db.json by default)
-const PRODUCTS_BASE  = "http://localhost:4000/products";
-const REVIEWS_BASE   = "http://localhost:4000/reviews";
-const PROFILE_BASE   = "http://localhost:4000/profile";
+// API endpoints
+const PRODUCTS_BASE  = `${BACKEND_URL}/products`;
+const REVIEWS_BASE   = `${BACKEND_URL}/reviews`;
+const PROFILE_BASE   = `${BACKEND_URL}/profile`;
 
 export const API = {
   // ── Static JSON or Backend Endpoints ──────────────────────────────────
