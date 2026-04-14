@@ -21,7 +21,7 @@ const Billing      = lazy(() => import('../pages/Billing'));
 const HelpCenter   = lazy(() => import('../pages/HelpCenter'));
 const AddProduct   = lazy(() => import('../pages/AddProduct/AddProduct'));
 const FinalSummary = lazy(() => import('../pages/AddProduct/FinalSummary'));
-const CreateAdmin  = lazy(() => import('../../Pages/StoreSignup'));
+import CreateAdmin from '../../Pages/StoreSignup';
 const Logout       = lazy(() => import('../pages/Logout'));
 
 // Employee Module
