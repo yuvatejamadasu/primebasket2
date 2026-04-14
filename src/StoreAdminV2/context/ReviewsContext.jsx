@@ -16,9 +16,12 @@ export const ReviewsProvider = ({ children }) => {
     const saved = localStorage.getItem('primebasket_reviews');
     if (saved) {
       try {
-        setReviews(JSON.parse(saved));
-        setLoaded(true);
-        return;
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          setReviews(parsed);
+          setLoaded(true);
+          return;
+        }
       } catch (e) { /* fall through */ }
     }
     
