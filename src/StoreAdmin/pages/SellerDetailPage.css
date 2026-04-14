@@ -1,0 +1,18 @@
+.seller-detail-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.seller-detail-page > .seller-detail-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (max-width: 860px) {
+  .seller-detail-page {
+    gap: 1rem;
+  }
+}

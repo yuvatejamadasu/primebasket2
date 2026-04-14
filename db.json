@@ -1,0 +1,21 @@
+{
+  "profile": [
+    {
+      "fullName": "Asfin",
+      "email": "admin@primebasket.com",
+      "phone": "+91 9398780057",
+      "location": "Hyderabad",
+      "role": "Hub Administrator",
+      "website": "https://primebasket.com",
+      "bio": "Responsible for overseeing platform operations, seller management, and product approvals across all regions.",
+      "profileImage": "",
+      "id": "1"
+    }
+  ],
+  "orders": [],
+  "sellers": [],
+  "reviews": [],
+  "brands": [],
+  "statistics": [],
+  "$schema": "./node_modules/json-server/schema.json"
+}

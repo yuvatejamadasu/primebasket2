@@ -1,0 +1,169 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .animate-stagger-1 {
+    animation-delay: 100ms;
+  }
+
+  .animate-stagger-2 {
+    animation-delay: 200ms;
+  }
+
+  .animate-stagger-3 {
+    animation-delay: 300ms;
+  }
+
+  .animate-stagger-4 {
+    animation-delay: 400ms;
+  }
+
+  .animate-stagger-5 {
+    animation-delay: 500ms;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #64748b40;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #64748b60;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #1d5ba0;
+}
+
+@theme {
+  --color-brand: var(--primary-color);
+  --color-brand-hover: #154882;
+  --color-brand-light: #1d5ba01a;
+  --color-brand-lightdark: #1d5ba020;
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 18px;
+}
+
+.brand-logo {
+  height: 32px;
+  width: auto;
+}
+
+.brand-name {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'Revue';
+  color: var(--primary-color) !important;
+  /* Prime Basket blue */
+  white-space: nowrap;
+}
+
+.dark .brand-name {
+  color: var(--primary-color) !important;
+}
+
+.dark .brand-logo {
+  filter: none;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Nunito', sans-serif;
+}
+
+.menu-toggle {
+  z-index: 20;
+  position: relative;
+}
+
+.sidebar.collapsed .brand-name {
+  display: none;
+}
+
+.sidebar.collapsed .sidebar-brand {
+  justify-content: center;
+  padding: 14px 0;
+  /* Removing side padding so logo fits cleanly when collapsed */
+}
+
+.sidebar.collapsed .brand-logo {
+  margin: auto;
+}
+
+.sidebar {
+  transition: width 0.3s ease;
+}

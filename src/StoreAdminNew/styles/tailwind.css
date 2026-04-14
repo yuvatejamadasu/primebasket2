@@ -1,0 +1,167 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #1d5ba0;
+  --color-brand-hover: #154882;
+  --color-brand-light: rgba(29, 91, 160, 0.1);
+  --color-brand-lightdark: rgba(29, 91, 160, 0.2);
+
+  --animate-fade-in: fadeIn 0.8s ease-out forwards;
+  --animate-slide-up: slideUp 0.6s ease-out forwards;
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+@layer components {
+  /* 🛡️ Migrated from SettingsPage.css 🛡️ */
+  .settings-sidebar__tab {
+    @apply w-full text-left border border-slate-200 bg-slate-50 text-slate-800 p-4 rounded-xl font-semibold transition-all hover:border-brand;
+  }
+  
+  .settings-sidebar__tab--active {
+    @apply bg-brand border-brand text-white shadow-lg;
+  }
+
+  .settings-card {
+    @apply rounded-2xl bg-white border border-slate-200 shadow-sm p-8;
+  }
+}
+
+/* 🛡️ CSS Fallbacks — Ensures layout works even if JIT fails 🛡️ */
+@layer utilities {
+  /* Brand colours */
+  .bg-brand   { background-color: #1d5ba0 !important; }
+  .text-brand { color: #1d5ba0 !important; }
+  .border-brand { border-color: #1d5ba0 !important; }
+
+  /* ── CENTERING / WIDTH — critical for Profile & Settings ── */
+  .max-w-2xl { max-width: 42rem !important; }
+  .max-w-3xl { max-width: 48rem !important; }
+  .max-w-4xl { max-width: 56rem !important; }
+  .mx-auto   { margin-left: auto !important; margin-right: auto !important; }
+
+  /* ── DISPLAY ── */
+  .flex       { display: flex !important; }
+  .grid       { display: grid !important; }
+
+  /* ── FLEX ── */
+  .flex-col   { flex-direction: column !important; }
+  .flex-row   { flex-direction: row !important; }
+  .flex-1     { flex: 1 1 0% !important; }
+  .flex-wrap  { flex-wrap: wrap !important; }
+  .shrink-0   { flex-shrink: 0 !important; }
+  .items-center  { align-items: center !important; }
+  .items-start   { align-items: flex-start !important; }
+  .justify-between { justify-content: space-between !important; }
+  .justify-end     { justify-content: flex-end !important; }
+  .justify-center  { justify-content: center !important; }
+
+  /* ── GRID ── */
+  .grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)) !important; }
+  .grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+  .grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
+
+  /* ── GAP ── */
+  .gap-1 { gap: 0.25rem !important; }
+  .gap-2 { gap: 0.5rem !important; }
+  .gap-3 { gap: 0.75rem !important; }
+  .gap-4 { gap: 1rem !important; }
+  .gap-5 { gap: 1.25rem !important; }
+  .gap-6 { gap: 1.5rem !important; }
+  .gap-8 { gap: 2rem !important; }
+  .gap-x-6 { column-gap: 1.5rem !important; }
+  .gap-y-6  { row-gap: 1.5rem !important; }
+
+  /* ── SPACING (space-y / space-x) ── */
+  .space-y-1 > * + * { margin-top: 0.25rem !important; }
+  .space-y-2 > * + * { margin-top: 0.5rem !important; }
+  .space-y-3 > * + * { margin-top: 0.75rem !important; }
+  .space-y-4 > * + * { margin-top: 1rem !important; }
+  .space-y-5 > * + * { margin-top: 1.25rem !important; }
+  .space-y-6 > * + * { margin-top: 1.5rem !important; }
+  .space-y-8 > * + * { margin-top: 2rem !important; }
+  .space-x-2 > * + * { margin-left: 0.5rem !important; }
+  .space-x-3 > * + * { margin-left: 0.75rem !important; }
+
+  /* ── PADDING ── */
+  .p-3  { padding: 0.75rem !important; }
+  .p-4  { padding: 1rem !important; }
+  .p-5  { padding: 1.25rem !important; }
+  .p-6  { padding: 1.5rem !important; }
+  .p-8  { padding: 2rem !important; }
+  .px-4 { padding-left: 1rem !important; padding-right: 1rem !important; }
+  .px-5 { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+  .px-6 { padding-left: 1.5rem !important; padding-right: 1.5rem !important; }
+  .py-2 { padding-top: 0.5rem !important; padding-bottom: 0.5rem !important; }
+  .py-3 { padding-top: 0.75rem !important; padding-bottom: 0.75rem !important; }
+  .py-6 { padding-top: 1.5rem !important; padding-bottom: 1.5rem !important; }
+  .pl-4  { padding-left: 1rem !important; }
+  .pl-10 { padding-left: 2.5rem !important; }
+  .pr-4  { padding-right: 1rem !important; }
+  .pr-10 { padding-right: 2.5rem !important; }
+  .pt-6  { padding-top: 1.5rem !important; }
+
+  /* ── MARGIN ── */
+  .mt-1  { margin-top: 0.25rem !important; }
+  .mt-8  { margin-top: 2rem !important; }
+
+  /* ── SIZING ── */
+  .w-full { width: 100% !important; }
+  .w-4    { width: 1rem !important; }
+  .w-10   { width: 2.5rem !important; }
+  .w-11   { width: 2.75rem !important; }
+  .w-32   { width: 8rem !important; }
+  .h-1    { height: 0.25rem !important; }
+  .h-4    { height: 1rem !important; }
+  .h-6    { height: 1.5rem !important; }
+  .h-10   { height: 2.5rem !important; }
+  .h-32   { height: 8rem !important; }
+
+  /* ── BORDER / RADIUS ── */
+  .rounded-lg   { border-radius: 0.5rem !important; }
+  .rounded-xl   { border-radius: 0.75rem !important; }
+  .rounded-2xl  { border-radius: 1rem !important; }
+  .rounded-full { border-radius: 9999px !important; }
+  .border   { border-width: 1px !important; }
+  .border-t { border-top-width: 1px !important; }
+
+  /* ── OVERFLOW / POSITION ── */
+  .overflow-hidden { overflow: hidden !important; }
+  .relative { position: relative !important; }
+  .absolute { position: absolute !important; }
+
+  /* ── TEXT ── */
+  .text-xs   { font-size: 0.75rem !important; line-height: 1rem !important; }
+  .text-sm   { font-size: 0.875rem !important; line-height: 1.25rem !important; }
+  .text-lg   { font-size: 1.125rem !important; line-height: 1.75rem !important; }
+  .text-xl   { font-size: 1.25rem !important; line-height: 1.75rem !important; }
+  .text-2xl  { font-size: 1.5rem !important; line-height: 2rem !important; }
+  .font-medium   { font-weight: 500 !important; }
+  .font-semibold { font-weight: 600 !important; }
+  .font-bold     { font-weight: 700 !important; }
+  .font-black    { font-weight: 900 !important; }
+}
+
+/* ── RESPONSIVE BREAKPOINTS (outside @layer to avoid nesting issues) ── */
+@media (min-width: 640px) {
+  .sm\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+}
+
+@media (min-width: 768px) {
+  .md\:flex-row      { flex-direction: row !important; }
+  .md\:grid-cols-2   { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .md\:grid-cols-3   { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+  .md\:grid-cols-4   { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
+  .md\:col-span-1    { grid-column: span 1 / span 1 !important; }
+  .md\:col-span-2    { grid-column: span 2 / span 2 !important; }
+  .md\:col-span-3    { grid-column: span 3 / span 3 !important; }
+}

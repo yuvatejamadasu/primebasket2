@@ -1,0 +1,135 @@
+.delivery-partners-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.delivery-partners-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.delivery-partners-toolbar {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.delivery-partners-search {
+  position: relative;
+  flex: 1;
+  min-width: 280px;
+}
+
+.delivery-partners-search svg {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+}
+
+.delivery-partners-search .form-control {
+  padding-left: 38px;
+}
+
+.delivery-partners-count {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.delivery-partners-table thead th {
+  background: var(--table-header);
+  color: #64748b;
+  border-bottom-color: var(--border-color);
+}
+
+.delivery-partners-table tbody tr {
+  border-bottom-color: var(--border-color);
+}
+
+.delivery-partners-table tbody tr:hover {
+  background: var(--table-hover);
+}
+
+.delivery-partners-id {
+  color: var(--primary) !important;
+  font-weight: 800;
+}
+
+.delivery-partners-name {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.delivery-partners-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), #3b82f6);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.delivery-partners-name strong,
+.delivery-partners-name span {
+  display: block;
+}
+
+.delivery-partners-name strong {
+  color: var(--text-primary);
+  font-size: 14px;
+}
+
+.delivery-partners-name span {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.delivery-partners-zone,
+.delivery-partners-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.delivery-partners-zone {
+  color: var(--text-secondary);
+}
+
+.delivery-partners-rating {
+  color: #f59e0b;
+  font-weight: 700;
+}
+
+.delivery-partners-empty {
+  text-align: center;
+  color: var(--text-muted);
+  padding: 32px 24px !important;
+}
+
+@media (max-width: 1100px) {
+  .delivery-partners-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .delivery-partners-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .delivery-partners-search {
+    min-width: 100%;
+  }
+}
